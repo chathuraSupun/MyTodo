@@ -8,7 +8,9 @@
     "eject": "expo eject",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "format": "prettier --write \"**/*.+(js|jsx|json|css|md|tsx)\""
+    "format": "prettier --write \"**/*.+(js|jsx|json|css|md|tsx)\"",
+    "storybook": "start-storybook -p 7007",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "expo": "~42.0.1",
@@ -21,11 +23,19 @@
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-typescript": "^7.15.0",
+    "@storybook/addon-actions": "^5.3",
+    "@storybook/addon-knobs": "^5.3",
+    "@storybook/addon-links": "^5.3",
+    "@storybook/addon-ondevice-actions": "^5.3.23",
+    "@storybook/addon-ondevice-knobs": "^5.3.25",
+    "@storybook/react-native": "^5.3.25",
+    "@storybook/react-native-server": "^5.3.23",
     "@types/jest": "^27.0.1",
     "@types/react": "~16.9.35",
     "@types/react-native": "~0.63.2",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.29.1",
+    "babel-loader": "^8.2.2",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -40,7 +50,9 @@
     "typescript": "~4.0.0"
   },
   "private": true,
-  "extends": ["plugin:prettier/recommended"],
+  "extends": [
+    "plugin:prettier/recommended"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint && npm run format"
