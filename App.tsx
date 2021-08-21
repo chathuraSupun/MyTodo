@@ -1,21 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+/* eslint arrow-body-style: 0 */
+import React, { FC } from "react";
+import { View, Text, Alert } from "react-native";
 
-export default function App() {
+import Button from "./src/components/atoms/Button/Button";
+
+const App: FC = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View>
+      <Text>Hello world</Text>
+      <Button onClick={() => Alert.alert("status", "clicked")} disabled={false}>
+        <Text>Cick me</Text>
+      </Button>
     </View>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
