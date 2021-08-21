@@ -9,9 +9,10 @@ import './rn-addons';
 // enables knobs for all stories
 addDecorator(withKnobs);
 
-const req = require.context('../src/components', true, /.stories.tsx$/);
+// const req = require.context('../src/components', true, /\.stories\.tsx$/);
 function loadStories() {
-  req.keys().forEach(req);
+  require('../src/components/atoms/Button/Button.stories');
+  // req.keys().forEach(req);
 }
 // import stories
 configure(loadStories, module);

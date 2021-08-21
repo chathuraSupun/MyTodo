@@ -5,14 +5,18 @@ import { TouchableOpacity, Text } from "react-native";
 import styles from "./Button.styles";
 
 type Props = {
-  disabled: boolean;
+  disabled?: boolean;
   onClick: () => void;
   children: any;
 };
 
-const Button: FC<Props> = ({ disabled, onClick, children }) => {
+const Button: FC<Props> = ({
+  disabled = false,
+  onClick = () => {},
+  children = "",
+}) => {
   return (
-    <TouchableOpacity onPress={onClick} disabled={disabled}>
+    <TouchableOpacity onPress={() => onClick()} disabled={disabled}>
       <Text style={styles.text}>{children}</Text>
     </TouchableOpacity>
   );
